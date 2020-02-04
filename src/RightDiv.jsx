@@ -17,7 +17,8 @@ class RightDiv extends React.Component {
             storeInfo: {},
             itemInfo: {},
             stock: null,
-            showSidebar: false
+            showSidebar: false,
+            relatedItems: []
         }
     }
 
@@ -34,6 +35,17 @@ class RightDiv extends React.Component {
           this.setState({stock: stockData[0].stock});
           console.log(this.state.stock);
         });
+        this.updateRelatedItems();
+    }
+
+    updateRelatedItems(number = 9) {
+      var from = Math.floor((Math.random() * 13) + 1);
+      var to = from - 1 + number;
+
+      $.get(`http://localhost:3000/api/relatedItems/${from}/${to}`).done((items) => {
+        this.setState({relatedItems: items});
+        console.log(this.state.relatedItems);
+      });
     }
 
     componentDidMount() {
@@ -69,7 +81,7 @@ class RightDiv extends React.Component {
         console.log(address);
         return(
             <div className="Col-favj32-0 eKPqHP h-padding-h-default h-padding-t-tight">
-                <Modal item={this.state.itemInfo} closeModal={this.closeModal} />
+                <Modal item={this.state.itemInfo} closeModal={this.closeModal} related={this.state.relatedItems}/>
                 <PickupDiv sideBar={this.toggleSidebar.bind(this)} hours={this.state.itemInfo.readyTime} closeModal={this.closeModal.bind(this)} handleModal={this.activateModal.bind(this)} stock={this.state.stock} storeInfo={this.state.storeInfo} address={address} pickup={this.state.itemInfo.pickup} />
                 <DeliveryDiv sideBar={this.toggleSidebar.bind(this)} closeModal={this.closeModal.bind(this)} handleModal={this.activateModal.bind(this)} stock={this.state.itemInfo.onlineStock} storeInfo={this.state.storeInfo} address={address} pickup={this.state.itemInfo.pickup} />
                 <SideBar sideBar={this.toggleSidebar.bind(this)} show={this.state.showSidebar}/>

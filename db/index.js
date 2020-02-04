@@ -36,8 +36,19 @@ const getStockInfo = function(callback, storeID, itemID) {
   });
 };
 
+const getRelatedItems = function (callback, from, to) {
+  console.log('Getting related items!');
+  connection.query(`SELECT * FROM items WHERE id BETWEEN ${from} AND ${to}`, (err, items) => {
+    if (err) {
+      callback(err);
+    }
+    callback(null, items)
+  });
+};
+
 module.exports = {
   getStoreInfo,
   getItemInfo,
-  getStockInfo
+  getStockInfo,
+  getRelatedItems
 };
