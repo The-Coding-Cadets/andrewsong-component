@@ -34,7 +34,7 @@ class DeliveryDiv extends React.Component {
         return (
             <div className="zipDiv bMargin">
                 <a href="#" className="" data-test="fiatsButton" onClick={this.toggleZipField}>Edit zip code</a>
-                </div>
+            </div>
         );
     }
 

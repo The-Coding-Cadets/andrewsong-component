@@ -45,6 +45,18 @@ app.get('/api/inventory/:storeID/:itemID', (req, res) => {
   }, storeID, itemID);
 });
 
+app.get('/api/relatedItems/:from/:to', (req, res) => {
+  var from = req.params.from;
+  var to = req.params.to;
+  db.getRelatedItems((err, info) => {
+    if(err) {
+      console.log(err);
+    }
+    console.log('related items got');
+    res.json(info);
+  }, from, to);
+});
+
 app.listen(PORT, () => {
   console.log(`listening on port ${PORT}`);
 });
