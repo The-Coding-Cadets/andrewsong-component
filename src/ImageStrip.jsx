@@ -40,7 +40,7 @@ class ImageStrip extends React.Component {
         return(
             <div>
                 <div className={`strip ${transform}`}>
-                    {imgLinks.map((link) => {return (<div className="container"><img src={link} width="200"></img></div>)})}
+                    {imgLinks.map((link) => {return (<div className="container"><img src={link} height="200"></img></div>)})}
                 </div>
                 <div style={{margin: "auto", width: "57px"}}>
                     {buttons.map((number) => { return (<ImageSlideButton active={active-number} switch={this.switchSlide.bind(this, number)} />)})}

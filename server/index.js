@@ -57,6 +57,16 @@ app.get('/api/relatedItems/:from/:to', (req, res) => {
   }, from, to);
 });
 
+app.get('/api/allStores', (req, res) => {
+  db.getAllStores((err, info) => {
+    if(err) {
+      console.log(err);
+    }
+    console.log('all stores got');
+    res.json(info);
+  });
+});
+
 app.listen(PORT, () => {
   console.log(`listening on port ${PORT}`);
 });

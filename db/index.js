@@ -46,9 +46,20 @@ const getRelatedItems = function (callback, from, to) {
   });
 };
 
+const getAllStores = function(callback) {
+  console.log('Getting all stores!');
+  connection.query('SELECT * FROM stores', (err, info) => {
+    if (err) {
+      callback(err);
+    }
+    callback(null, info);
+  });
+}
+
 module.exports = {
   getStoreInfo,
   getItemInfo,
   getStockInfo,
-  getRelatedItems
+  getRelatedItems,
+  getAllStores
 };

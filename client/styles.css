@@ -157,6 +157,8 @@ body {
     padding: 20px;
     border: 1px solid #888;
     width: 800px;
+    font-size: 15px !important;
+    border-radius: 5px;
   }
   
   
@@ -294,4 +296,14 @@ body {
 .shiftTwo {
   /* transform: translateX(-200px); */
   justify-content: flex-end;
+}
+
+.storeDiv {
+  /* width: 90%; */
+  margin: 15px;
+  background-color: white;
+  box-shadow: 0 0 3px grey;
+  font-size: 12px !important;
+  border-radius: 5px;
+  padding: 16px;
 }

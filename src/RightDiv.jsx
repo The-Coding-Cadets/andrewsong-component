@@ -18,7 +18,8 @@ class RightDiv extends React.Component {
             itemInfo: {},
             stock: null,
             showSidebar: false,
-            relatedItems: []
+            relatedItems: [],
+            allStores: []
         }
     }
 
@@ -34,6 +35,10 @@ class RightDiv extends React.Component {
         $.get(`http://localhost:3000/api/inventory/${this.state.storeID}/${this.state.itemID}`).done((stockData) => {
           this.setState({stock: stockData[0].stock});
           console.log(this.state.stock);
+        });
+        $.get(`http://localhost:3000/api/allStores`).done((stores) => {
+          this.setState({allStores: stores});
+          console.log(this.state.allStores);
         });
         this.updateRelatedItems();
     }
@@ -84,7 +89,7 @@ class RightDiv extends React.Component {
                 <Modal item={this.state.itemInfo} closeModal={this.closeModal} related={this.state.relatedItems}/>
                 <PickupDiv sideBar={this.toggleSidebar.bind(this)} hours={this.state.itemInfo.readyTime} closeModal={this.closeModal.bind(this)} handleModal={this.activateModal.bind(this)} stock={this.state.stock} storeInfo={this.state.storeInfo} address={address} pickup={this.state.itemInfo.pickup} />
                 <DeliveryDiv sideBar={this.toggleSidebar.bind(this)} closeModal={this.closeModal.bind(this)} handleModal={this.activateModal.bind(this)} stock={this.state.itemInfo.onlineStock} storeInfo={this.state.storeInfo} address={address} pickup={this.state.itemInfo.pickup} />
-                <SideBar sideBar={this.toggleSidebar.bind(this)} show={this.state.showSidebar}/>
+                <SideBar modal={this.activateModal.bind(this)} stores={this.state.allStores} home={this.state.storeInfo} sideBar={this.toggleSidebar.bind(this)} show={this.state.showSidebar}/>
             </div>
         );
     }

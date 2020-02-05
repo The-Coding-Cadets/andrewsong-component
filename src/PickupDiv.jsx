@@ -1,5 +1,6 @@
 import React from 'react';
 import $ from 'jquery';
+import AddButton from './AddButton.jsx';
 
 class PickupDiv extends React.Component {
     constructor (props) {
@@ -36,11 +37,7 @@ class PickupDiv extends React.Component {
 
     pickupButton() {
         if (this.props.stock !== 0 && this.props.pickup !== 0) {
-            return(<div>
-                <div className="styles__StyledATC-sc-1gn4z07-3 kFcWDm h-margin-t-tiny h-margin-b-tiny">
-                    <button data-test="storeATCButton" onClick={this.props.handleModal} type="button" className="redButton">Pick it up</button>
-                    </div>
-                    </div>);
+            return (<AddButton click={this.props.handleModal} msg="Ship it" />);
         }
     }
 
