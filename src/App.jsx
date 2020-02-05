@@ -7,7 +7,7 @@ import Modal from './modal.jsx';
 import PickupDiv from './PickupDiv.jsx';
 import DeliveryDiv from './DeliveryDiv.jsx';
 
-class RightDiv extends React.Component {
+class App extends React.Component {
     constructor(props) {
         super(props);
 
@@ -95,6 +95,6 @@ class RightDiv extends React.Component {
     }
 }
 
-ReactDOM.render(<RightDiv />, document.getElementById('app'));
+ReactDOM.render(<App />, document.getElementById('app'));
 
-export default RightDiv;
+export default App;

@@ -1,5 +1,5 @@
 module.exports = {
-  entry: __dirname + '/src/RightDiv.jsx',
+  entry: __dirname + '/src/App.jsx',
   module: {
     rules: [
       {
