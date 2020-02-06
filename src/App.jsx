@@ -26,19 +26,15 @@ class App extends React.Component {
     updateInfo() {
         $.get('http://localhost:3001/api/stores/' + this.state.storeID).done((storeData) => {
           this.setState({storeInfo: storeData[0]});
-          console.log(this.state.storeInfo)
         });
         $.get('http://localhost:3001/api/items/' + this.state.itemID).done((itemData) => {
           this.setState({itemInfo: itemData[0]});
-          console.log(this.state.itemInfo);
         });
         $.get(`http://localhost:3001/api/inventory/${this.state.storeID}/${this.state.itemID}`).done((stockData) => {
           this.setState({stock: stockData[0].stock});
-          console.log(this.state.stock);
         });
         $.get(`http://localhost:3001/api/allStores`).done((stores) => {
           this.setState({allStores: stores});
-          console.log(this.state.allStores);
         });
         this.updateRelatedItems();
     }
@@ -49,7 +45,6 @@ class App extends React.Component {
 
       $.get(`http://localhost:3001/api/relatedItems/${from}/${to}`).done((items) => {
         this.setState({relatedItems: items});
-        console.log(this.state.relatedItems);
       });
     }
 
@@ -83,7 +78,6 @@ class App extends React.Component {
     render() {
         var store = this.state.storeInfo;
         var address = `${store.street} ${store.city} ${store.stateus} ${store.zip}`;
-        console.log(address);
         return(
             <div className="Col-favj32-0 eKPqHP h-padding-h-default h-padding-t-tight">
                 <Modal item={this.state.itemInfo} closeModal={this.closeModal} related={this.state.relatedItems}/>
