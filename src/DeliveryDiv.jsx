@@ -53,7 +53,6 @@ class DeliveryDiv extends React.Component {
     submitZip(e) {
         var form = document.getElementById('zipInput');
         var formData = form.value + '';
-        console.log(formData);
         this.setState({
             zip: formData
         });
@@ -61,7 +60,6 @@ class DeliveryDiv extends React.Component {
     }
 
     updateField(e) {
-        console.log(e.target.value);
         var form = document.getElementById('zipInput');
         form.value = e.target.value;
     }

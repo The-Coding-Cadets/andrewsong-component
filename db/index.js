@@ -5,7 +5,6 @@ const connection = mysql.createConnection(mysqlConfig);
 
 const getStoreInfo = function(callback, id) {
   // TODO - your code here!
-  console.log('Getting store info!');
   connection.query('SELECT * FROM stores WHERE id=' + id, (err, info) => {
     if (err) {
       callback(err);
@@ -16,7 +15,6 @@ const getStoreInfo = function(callback, id) {
 
 const getItemInfo = function(callback, id) {
   // TODO - your code here!
-  console.log('Getting item info!');
   connection.query('SELECT * FROM items WHERE id=' + id, (err, info) => {
     if (err) {
       callback(err);
@@ -27,7 +25,6 @@ const getItemInfo = function(callback, id) {
 
 const getStockInfo = function(callback, storeID, itemID) {
   // TODO - your code here!
-  console.log('Getting stock info!');
   connection.query(`SELECT * FROM inventory WHERE store=${storeID} AND item=${itemID}`, (err, info) => {
     if (err) {
       callback(err);
@@ -37,7 +34,6 @@ const getStockInfo = function(callback, storeID, itemID) {
 };
 
 const getRelatedItems = function (callback, from, to) {
-  console.log('Getting related items!');
   connection.query(`SELECT * FROM items WHERE id BETWEEN ${from} AND ${to}`, (err, items) => {
     if (err) {
       callback(err);
@@ -47,7 +43,6 @@ const getRelatedItems = function (callback, from, to) {
 };
 
 const getAllStores = function(callback) {
-  console.log('Getting all stores!');
   connection.query('SELECT * FROM stores', (err, info) => {
     if (err) {
       callback(err);

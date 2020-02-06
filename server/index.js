@@ -4,7 +4,7 @@ const bodyParser = require('body-parser');
 const db = require('../db');
 
 const app = express();
-const PORT = 3000;
+const PORT = 3001;
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
@@ -17,7 +17,6 @@ app.get('/api/stores/:id', (req, res) => {
     if(err) {
       console.log(err);
     }
-    console.log('store info got');
     res.json(info);
   }, id);
 });
@@ -28,7 +27,6 @@ app.get('/api/items/:id', (req, res) => {
     if(err) {
       console.log(err);
     }
-    console.log('item info got');
     res.json(info);
   }, id);
 });
@@ -40,7 +38,6 @@ app.get('/api/inventory/:storeID/:itemID', (req, res) => {
     if(err) {
       console.log(err);
     }
-    console.log('item info got');
     res.json(info);
   }, storeID, itemID);
 });
@@ -52,7 +49,6 @@ app.get('/api/relatedItems/:from/:to', (req, res) => {
     if(err) {
       console.log(err);
     }
-    console.log('related items got');
     res.json(info);
   }, from, to);
 });
@@ -62,7 +58,6 @@ app.get('/api/allStores', (req, res) => {
     if(err) {
       console.log(err);
     }
-    console.log('all stores got');
     res.json(info);
   });
 });
