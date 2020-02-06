@@ -7,7 +7,7 @@ import Modal from './modal.jsx';
 import PickupDiv from './PickupDiv.jsx';
 import DeliveryDiv from './DeliveryDiv.jsx';
 
-class App extends React.Component {
+class Options extends React.Component {
     constructor(props) {
         super(props);
 
@@ -89,6 +89,6 @@ class App extends React.Component {
     }
 }
 
-ReactDOM.render(<App />, document.getElementById('app'));
+ReactDOM.render(<Options />, document.getElementById('options'));
 
-export default App;
+export default Options;
