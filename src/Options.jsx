@@ -53,7 +53,7 @@ class Options extends React.Component {
     }
 
     activateModal() {
-      var modal = document.getElementsByClassName('modal')[0];
+      var modal = document.getElementsByClassName('optionsModal')[0];
       modal.style.display = 'block';
       window.onclick = function(event) {
             if (event.target == modal) {
@@ -63,7 +63,7 @@ class Options extends React.Component {
     }
 
     closeModal() {
-      var modal = document.getElementsByClassName('modal')[0];
+      var modal = document.getElementsByClassName('optionsModal')[0];
       modal.style.display = 'none';
     }
 

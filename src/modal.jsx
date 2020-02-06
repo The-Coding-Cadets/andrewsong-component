@@ -9,7 +9,7 @@ class modal extends React.Component {
     
     render() {
         return (
-            <div className="modal">
+            <div className="optionsModal">
             <div className="modal-content">
                 <span className="close" onClick={this.props.closeModal}>&times;</span>
                 <div className="inlineBlock"><img src={this.props.item.imgurl} width="100"></img></div>
@@ -17,10 +17,10 @@ class modal extends React.Component {
                 <p>Edit delivery method in cart</p>
                 <p>{`$${this.props.item.price/100}`}</p></div>
                 <div>
-                <div className="container inlineBlock">
+                <div className="optionsContainer inlineBlock">
                     <button onClick={this.props.closeModal} className="redButton">Continue shopping</button>
                 </div>
-                <div className="container inlineBlock">
+                <div className="optionsContainer inlineBlock">
                     <button className="whiteButton">{`View cart & checkout`}</button>
                 </div>
                 <div>

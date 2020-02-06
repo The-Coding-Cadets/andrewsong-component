@@ -67,8 +67,8 @@ class DeliveryDiv extends React.Component {
     zipField() {
         if(this.state.showZipField !== 0) {
             return(<div className="inputWrapper"><label htmlFor="enterYourZipCode">enter your zip code&nbsp;</label><input id="zipInput" onChange={this.updateField} name="zipInput" type="text" maxLength="5" autoComplete="on"></input>
-            <div><div className="container inlineBlock"><form><input name="zipInput" type="submit" onClick={this.submitZip} value="submit" className="redButton"></input></form></div>
-            <div className="container inlineBlock"><button onClick={this.toggleZipField} className="whiteButton">cancel</button></div></div></div>);
+            <div><div className="optionsContainer inlineBlock"><form><input name="zipInput" type="submit" onClick={this.submitZip} value="submit" className="redButton"></input></form></div>
+            <div className="optionsContainer inlineBlock"><button onClick={this.toggleZipField} className="whiteButton">cancel</button></div></div></div>);
         }
     }
 
@@ -85,9 +85,9 @@ class DeliveryDiv extends React.Component {
     }
 
     render() {
-    return (<div className="box"><div className="container inlineBlock">{this.deliverMsg()}{this.editZip()}</div><div className="buttonDiv inlineBlock">{this.pickupButton()}</div>
-    <div className="container">{this.lowStocks()}</div>
-    <div className="container">{this.zipField()}</div>
+    return (<div className="box"><div className="optionsContainer inlineBlock">{this.deliverMsg()}{this.editZip()}</div><div className="buttonDiv inlineBlock">{this.pickupButton()}</div>
+    <div className="optionsContainer">{this.lowStocks()}</div>
+    <div className="optionsContainer">{this.zipField()}</div>
     </div>);
     }
 }

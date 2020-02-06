@@ -59,9 +59,9 @@ class PickupDiv extends React.Component {
     }
 
     render() {
-    return (<div className="box pad-bot"><div className="container inlineBlock">{this.storeMessage()}{this.editStore()}</div><div className="buttonDiv inlineBlock">{this.pickupButton()}</div>
-    <div className="container">{this.lowStocks()}</div>
-    <div className="container">{this.pickupEligible()}</div></div>);
+    return (<div className="box pad-bot"><div className="optionsContainer inlineBlock">{this.storeMessage()}{this.editStore()}</div><div className="buttonDiv inlineBlock">{this.pickupButton()}</div>
+    <div className="optionsContainer">{this.lowStocks()}</div>
+    <div className="optionsContainer">{this.pickupEligible()}</div></div>);
     }
 }
 
