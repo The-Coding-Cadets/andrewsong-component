@@ -24,16 +24,16 @@ class Options extends React.Component {
     }
 
     updateInfo() {
-        $.get('http://localhost:80/api/stores/' + this.state.storeID).done((storeData) => {
+        $.get('http://localhost:3001/api/stores/' + this.state.storeID).done((storeData) => {
           this.setState({storeInfo: storeData[0]});
         });
-        $.get('http://localhost:80/api/items/' + this.state.itemID).done((itemData) => {
+        $.get('http://localhost:3001/api/items/' + this.state.itemID).done((itemData) => {
           this.setState({itemInfo: itemData[0]});
         });
-        $.get(`http://localhost:80/api/inventory/${this.state.storeID}/${this.state.itemID}`).done((stockData) => {
+        $.get(`http://localhost:3001/api/inventory/${this.state.storeID}/${this.state.itemID}`).done((stockData) => {
           this.setState({stock: stockData[0].stock});
         });
-        $.get(`http://localhost:80/api/allStores`).done((stores) => {
+        $.get(`http://localhost:3001/api/allStores`).done((stores) => {
           this.setState({allStores: stores});
         });
         this.updateRelatedItems();
@@ -43,7 +43,7 @@ class Options extends React.Component {
       var from = Math.floor((Math.random() * 13) + 1);
       var to = from - 1 + number;
 
-      $.get(`http://localhost:80/api/relatedItems/${from}/${to}`).done((items) => {
+      $.get(`http://localhost:3001/api/relatedItems/${from}/${to}`).done((items) => {
         this.setState({relatedItems: items});
       });
     }

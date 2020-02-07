@@ -5,7 +5,7 @@ const db = require('../db');
 const path = require('path');
 
 const app = express();
-const PORT = 80;
+const PORT = 3001;
 
 app.use(cors());
 app.use(bodyParser.json());
