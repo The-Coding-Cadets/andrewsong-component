@@ -10,7 +10,7 @@
   "scripts": {
     "react-dev": "webpack -d --watch",
     "start": "nodemon server/index.js",
-    "database": "mysql -u root -p < schema.sql"
+    "database": "mysql -u root < schema.sql"
   },
   "dependencies": {
     "body-parser": "^1.19.0",
