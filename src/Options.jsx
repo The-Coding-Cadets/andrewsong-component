@@ -18,6 +18,7 @@ class Options extends React.Component {
             itemInfo: {},
             stock: null,
             showSidebar: false,
+            showModal: false,
             relatedItems: [],
             allStores: []
         }
@@ -52,19 +53,27 @@ class Options extends React.Component {
       this.updateInfo();
     }
 
-    activateModal() {
-      var modal = document.getElementsByClassName('optionsModal')[0];
-      modal.style.display = 'block';
-      window.onclick = function(event) {
-            if (event.target == modal) {
-            modal.style.display = "none";
-            }
-        }
-    }
+    // activateModal() {
+    //   var modal = document.getElementsByClassName('optionsModal')[0];
+    //   modal.style.display = 'block';
+    //   window.onclick = function(event) {
+    //         if (event.target == modal) {
+    //         modal.style.display = "none";
+    //         }
+    //     }
+    // }
 
-    closeModal() {
-      var modal = document.getElementsByClassName('optionsModal')[0];
-      modal.style.display = 'none';
+    // closeModal() {
+    //   var modal = document.getElementsByClassName('optionsModal')[0];
+    //   modal.style.display = 'none';
+    // }
+
+    toggleModal() {
+      if(this.state.showModal === true) {
+        this.setState({showModal: false});
+      } else {
+        this.setState({showModal: true});
+      }
     }
 
     toggleSidebar() {
@@ -80,10 +89,10 @@ class Options extends React.Component {
         var address = `${store.street} ${store.city} ${store.stateus} ${store.zip}`;
         return(
             <div className="Col-favj32-0 eKPqHP h-padding-h-default h-padding-t-tight">
-                <Modal item={this.state.itemInfo} closeModal={this.closeModal} related={this.state.relatedItems}/>
-                <PickupDiv sideBar={this.toggleSidebar.bind(this)} hours={this.state.itemInfo.readyTime} closeModal={this.closeModal.bind(this)} handleModal={this.activateModal.bind(this)} stock={this.state.stock} storeInfo={this.state.storeInfo} address={address} pickup={this.state.itemInfo.pickup} />
-                <DeliveryDiv sideBar={this.toggleSidebar.bind(this)} closeModal={this.closeModal.bind(this)} handleModal={this.activateModal.bind(this)} stock={this.state.itemInfo.onlineStock} storeInfo={this.state.storeInfo} address={address} pickup={this.state.itemInfo.pickup} />
-                <SideBar modal={this.activateModal.bind(this)} stores={this.state.allStores} home={this.state.storeInfo} sideBar={this.toggleSidebar.bind(this)} show={this.state.showSidebar}/>
+                <Modal modal={this.state.showModal} item={this.state.itemInfo} toggleModal={this.toggleModal.bind(this)} related={this.state.relatedItems}/>
+                <PickupDiv sideBar={this.toggleSidebar.bind(this)} hours={this.state.itemInfo.readyTime} toggleModal={this.toggleModal.bind(this)} stock={this.state.stock} storeInfo={this.state.storeInfo} address={address} pickup={this.state.itemInfo.pickup} />
+                <DeliveryDiv sideBar={this.toggleSidebar.bind(this)} toggleModal={this.toggleModal.bind(this)} stock={this.state.itemInfo.onlineStock} storeInfo={this.state.storeInfo} address={address} pickup={this.state.itemInfo.pickup} />
+                <SideBar toggleModal={this.toggleModal.bind(this)} stores={this.state.allStores} home={this.state.storeInfo} sideBar={this.toggleSidebar.bind(this)} show={this.state.showSidebar}/>
             </div>
         );
     }

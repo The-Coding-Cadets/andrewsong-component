@@ -25,7 +25,7 @@ class SideBar extends React.Component {
 
         var button = () => {
             this.props.sideBar();
-            this.props.modal();
+            this.props.toggleModal();
         }
 
         return (

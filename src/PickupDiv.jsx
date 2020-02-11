@@ -37,7 +37,7 @@ class PickupDiv extends React.Component {
 
     pickupButton() {
         if (this.props.stock !== 0 && this.props.pickup !== 0) {
-            return (<AddButton click={this.props.handleModal} msg="Ship it" />);
+            return (<AddButton click={this.props.toggleModal} msg="Ship it" />);
         }
     }
 

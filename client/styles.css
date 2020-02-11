@@ -136,7 +136,6 @@ body {
 }
 
 .optionsModal {
-    display: none; /* Hidden by default */
     position: fixed; /* Stay in place */
     z-index: 1; /* Sit on top */
     padding-top: 100px; /* Location of the box */
@@ -149,6 +148,14 @@ body {
     background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
     box-sizing: inherit;
   }
+
+  .optionsModalHidden {
+    display: none; /* Hidden by default */
+  }
+
+  .optionsModalShow {
+    display: block; /* Hidden by default */
+  }
   
   /* Modal Content */
   .modal-content {
@@ -159,6 +166,7 @@ body {
     width: 800px;
     font-size: 15px !important;
     border-radius: 5px;
+    z-index: 2;
   }
   
   
