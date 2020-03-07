@@ -9,7 +9,7 @@
   },
   "scripts": {
     "test": "jest",
-    "react-dev": "webpack -d --watch",
+    "react-dev": "webpack -p --watch",
     "start": "nodemon server/index.js",
     "database": "mysql -u root < schema.sql"
   },
@@ -28,6 +28,7 @@
     "@babel/preset-react": "^7.8.3",
     "babel-jest": "^25.1.0",
     "babel-loader": "^8.0.6",
+    "babel-minify-webpack-plugin": "^0.3.1",
     "enzyme": "^3.11.0",
     "enzyme-adapter-react-16": "^1.15.2",
     "eslint-config-hackreactor": "git://github.com/reactorcore/eslint-config-hackreactor",
@@ -39,4 +40,3 @@
     "webpack-cli": "^3.3.10"
   }
 }
-

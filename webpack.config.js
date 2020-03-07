@@ -1,10 +1,13 @@
-const TerserPlugin = require('terser-webpack-plugin');
+// const MinifyPlugin = require("babel-minify-webpack-plugin");
 
   module.exports = {
     mode: 'production',
-    optimization: {
-      minimizer: [new TerserPlugin({ /* additional options here */ })],
-    },
+    // optimization: {
+    //   minimizer: [new MinifyPlugin({}, {
+    //     test: [/\.jsx$/],
+    //     exclude: /node_modules/,
+    //   })],
+    // },
     entry: __dirname + '/src/Options.jsx',
     module: {
       rules: [
@@ -14,7 +17,7 @@ const TerserPlugin = require('terser-webpack-plugin');
           use: {
             loader: 'babel-loader',
             options: {
-              presets: ['@babel/preset-react', '@babel/preset-env']
+              presets: ['@babel/preset-react', '@babel/preset-env', 'minify']
             }
           }
         }
