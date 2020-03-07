@@ -53,21 +53,6 @@ class Options extends React.Component {
       this.updateInfo();
     }
 
-    // activateModal() {
-    //   var modal = document.getElementsByClassName('optionsModal')[0];
-    //   modal.style.display = 'block';
-    //   window.onclick = function(event) {
-    //         if (event.target == modal) {
-    //         modal.style.display = "none";
-    //         }
-    //     }
-    // }
-
-    // closeModal() {
-    //   var modal = document.getElementsByClassName('optionsModal')[0];
-    //   modal.style.display = 'none';
-    // }
-
     toggleModal() {
       if(this.state.showModal === true) {
         this.setState({showModal: false});

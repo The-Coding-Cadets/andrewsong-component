@@ -1,13 +1,5 @@
-// const MinifyPlugin = require("babel-minify-webpack-plugin");
-
   module.exports = {
     mode: 'production',
-    // optimization: {
-    //   minimizer: [new MinifyPlugin({}, {
-    //     test: [/\.jsx$/],
-    //     exclude: /node_modules/,
-    //   })],
-    // },
     entry: __dirname + '/src/Options.jsx',
     module: {
       rules: [
@@ -17,7 +9,7 @@
           use: {
             loader: 'babel-loader',
             options: {
-              presets: ['@babel/preset-react', '@babel/preset-env', 'minify']
+              presets: ['@babel/preset-react', '@babel/preset-env']
             }
           }
         }

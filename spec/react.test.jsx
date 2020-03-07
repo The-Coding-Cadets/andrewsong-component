@@ -11,7 +11,7 @@ function Fixture() {
   );
 }
 
-const wrapper = mount(<Fixture />); // mount/render/shallow when applicable
+const wrapper = mount(<Fixture />);
 
 expect(wrapper.find('#checked')).toBeChecked();
 expect(wrapper.find('#not')).not.toBeChecked();
