@@ -13,15 +13,15 @@
 ```sh
 npm install
 ```
-1. If making changes to component, start webpack.
+2. If making changes to component, start webpack.
 ```sh
 npm run react-dev
 ```
-1. Seed database with dummy data.
+3. Seed database with dummy data.
 ```sh
 npm run database
 ```
-1. Start server. Default port is 3001.
+4. Start server. Default port is 3001.
 ```sh
 npm run start
 ```
