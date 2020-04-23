@@ -1,6 +1,6 @@
 # Delivery Component
 
-> Front-end component for displaying shipment options for a retail product page.
+> Front-end component for displaying shipment options on a retail product page.
 
 ## Related Projects
 
