@@ -1,30 +1,34 @@
-# Project Name
+# Delivery Component
 
-> Project description
+> Front-end component for displaying shipment options for a retail product page.
 
 ## Related Projects
 
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
-
-## Table of Contents
-
-1. [Usage](#Usage)
-1. [Requirements](#requirements)
-1. [Development](#development)
+  - https://github.com/The-Coding-Cadets
 
 ## Usage
 
-> Some usage instructions
+1. Install dependencies.
+
+```sh
+npm install
+```
+1. If making changes to component, start webpack.
+```sh
+npm run react-dev
+```
+1. Seed database with dummy data.
+```sh
+npm run database
+```
+1. Start server. Default port is 3001.
+```sh
+npm run start
+```
 
 ## Requirements
 
-An `nvmrc` file is included if using [nvm](https://github.com/creationix/nvm).
-
-- Node 6.13.0
-- etc
+- Node
 
 ## Development
 
@@ -33,7 +37,6 @@ An `nvmrc` file is included if using [nvm](https://github.com/creationix/nvm).
 From within the root directory:
 
 ```sh
-npm install -g webpack
 npm install
 ```
 
