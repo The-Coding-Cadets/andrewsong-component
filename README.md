@@ -29,14 +29,3 @@ npm run start
 ## Requirements
 
 - Node
-
-## Development
-
-### Installing Dependencies
-
-From within the root directory:
-
-```sh
-npm install
-```
-
